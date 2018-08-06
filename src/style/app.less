@@ -1,0 +1,277 @@
+@import "./common/vars.less";
+@import "./common/utils.less";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+}
+
+body{
+  font-family: "Microsoft YaHei", sans-serif;
+  min-height: 100%;
+  font-size: 14px;
+}
+
+.yahei {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+p,
+button
+{
+  padding: 0;
+  margin: 0;
+}
+a:hover{
+  text-decoration: none;
+  opacity: 0.6;
+}
+.error,
+.error-text {
+  font-size: 14px;
+  color:#fe0000;
+}
+
+
+
+// app loading
+.preload {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .preload-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// input placeholder color
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+  color: #bababa;
+}
+input::-moz-placeholder,   /* Mozilla Firefox 19+ */
+textarea::-webkit-input-placeholder{
+  color:#bababa;
+}
+input:-moz-placeholder,    /* Mozilla Firefox 4 to 18 */
+textarea::-webkit-input-placeholder{
+  color:#bababa;
+}
+input:-ms-input-placeholder,  /* Internet Explorer 10-11 */
+textarea::-webkit-input-placeholder{
+  color:#bababa;
+}
+input,
+textarea {
+  outline: none;
+  border: 1px solid #e4e4e4;
+}
+textarea:focus,
+input:focus {
+  box-shadow: 0px 0px 3px rgba(18, 210, 203, 0.3);
+  border: 1px solid @theme-color !important;
+}
+
+
+
+//my ember-power-select common
+.ember-basic-dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 14px;
+}
+.ember-power-select-trigger {
+  width: auto;
+  border-radius: 0px;
+  color: #666;
+  border-color: #dfe4e7;
+}
+.ember-power-select-trigger:focus, .ember-power-select-trigger--active {
+  outline: none;
+  border-color: #e4e4e4;
+}
+.ember-power-select-trigger[aria-expanded="true"] {
+  outline-color: #e7fafa;
+  border-color: @theme-color;
+}
+
+.ember-power-select-selected-item, .ember-power-select-placeholder {
+  margin-left: 3px;
+  margin-right: 4px;
+}
+.ember-power-select-status-icon {
+  border-color: #666 transparent transparent transparent
+}
+.ember-power-select-option[aria-current="true"],
+.ember-power-select-option[aria-selected="true"]  {
+  background-color: @theme-color;
+  color: #fff;
+}
+.ember-power-select-dropdown {
+  border-radius: 0px;
+  ul {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #e4e4e4;
+    border-top: none;
+  }
+  li{
+    margin: 2px 0;
+  }
+}
+
+.ember-power-select-dropdown,
+.ember-power-select-dropdown.ember-basic-dropdown-content--below, .ember-power-select-dropdown.ember-basic-dropdown-content--in-place {
+  border: none;
+}
+.ember-power-select-options[role="listbox"]{
+  max-height: 135px;
+}
+
+
+.ember-power-select-search {
+  position: relative;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+
+  &::after {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "\e607";
+    font-family: 'iconfont';
+    color: #b6b6b6;
+  }
+}
+
+// common notification
+div[class^="_c-notification__container--top"] {
+  top: 60px;
+}
+div[class^="_c-notification__container"] {
+  max-width: 290px;
+}
+.common-notification {
+  display: inline-flex;
+  width: 290px;
+
+  div[class^="_c-notification__countdown"],
+  div[class^="_c-notification__icon"]  {
+    display: none;
+  }
+
+  div[class^="_c-notification__content"] {
+    position: relative;
+    display: block;
+    padding: 12px 0px;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+  }
+  div[class^="_c-notification__close"] {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .fa, .fa-remove, .fa-close, .fa-times {
+      display: inline-block;
+      font-style: normal;
+      font-variant-ligatures: normal;
+      font-variant-caps: normal;
+      font-variant-numeric: normal;
+      font-weight: normal;
+      font-stretch: normal;
+      font-family: iconfont;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+
+    .fa-remove:before, .fa-close:before, .fa-times:before {
+      content: "\e622";
+    }
+  }
+}
+div[class^="_c-notification--success"],
+._c-notification--success_of6y9q {
+  background-color: #00ce11;
+}
+div[class^="_c-notification--error"],
+._c-notification--error_of6y9q {
+  background-color: #fa3535;
+}
+
+
+
+
+.c-checkbox {
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"] + span {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 4px;
+    cursor: pointer;
+    border: 1px solid #c9c9c9;
+    vertical-align: middle;
+  }
+  input[type="checkbox"]:checked + span {
+    // background: url(../images/icon_gou.png) center no-repeat @theme-color;
+    border-color: @theme-color !important;
+  }
+  &.border-white input[type="checkbox"] + span {
+    border-color: #fff;
+  }
+}
+
+
+// 日期组件
+
+.flatpickr-current-month .numInputWrapper  {
+  width: 8ch;
+  .cur-year-absolute {
+    position: absolute;
+    right: 14px;
+    top: 4px;
+   }
+}
+
+// 极验相关
+
+.geetest_holder.geetest_mobile.geetest_ant .geetest_panel .geetest_copyright,
+.geetest_holder.geetest_mobile.geetest_ant .geetest_panel .geetest_small a.geetest_feedback,
+.geetest_holder.geetest_silver .geetest_panel .geetest_small a.geetest_feedback,
+.geetest_holder.geetest_silver .geetest_panel .geetest_small a.geetest_feedback:hover,
+.geetest_holder.geetest_wind .geetest_logo,
+.geetest_holder.geetest_wind .geetest_success_logo {
+  display: none;
+}
