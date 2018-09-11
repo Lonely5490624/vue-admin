@@ -1,7 +1,7 @@
 <template>
   <el-header>
     <el-button @click="toggleNav" class="collspan">X</el-button>
-    <div class="fr">这是右侧这是右侧这是右侧这是右侧</div>
+    <div class="fr"><el-button @click="loginout">退出登录</el-button></div>
   </el-header>
 </template>
 <script>
@@ -16,7 +16,11 @@ export default {
   methods: {
     toggleNav: function () {
       this.$emit('toggleNav')
-		}
+    },
+    loginout: function () {
+      window.localStorage.removeItem('token')
+      this.$router.replace({ path: '/login' })
+    }
 	}
 }
 </script>

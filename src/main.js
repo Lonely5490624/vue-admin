@@ -5,12 +5,14 @@ import App from './App'
 import router from './router'
 import Axios from 'axios'
 import VueAxios from 'vue-axios'
-import ElementUI from 'element-ui'
+import ElementUI, { Message } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
 
 Vue.use(VueAxios, Axios, ElementUI)
+
+Vue.prototype.$message = Message
 
 /* eslint-disable no-new */
 new Vue({
